@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "com.joebank.transactionsservice.grpc";
+option java_multiple_files = true;
+option java_outer_classname = "TransactionsProto";
+
+
+message Transaction {
+    int64 account = 1;
+    string type = 2;
+    double amount = 3;
+    bool is_interbank = 4;
+    string created_at = 5;
+    double tax_amount = 6;
+}
+
+message TransactionRequest {
+    int64 account_number = 1;
+}
+
+message TransactionResponse {
+    repeated Transaction transactions = 1;
+}
+
+service TransactionsService {
+    rpc getTransactions(TransactionRequest) returns (TransactionResponse);
+}
