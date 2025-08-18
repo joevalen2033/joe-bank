@@ -72,6 +72,11 @@ public class TransactionsService {
                                     .flatMap(savedTransaction -> {
                                         sourceAccount.setBalance(sourceAccount.getBalance() - transactionDTO.getAmount());
                                         return accountRepository.save(sourceAccount)
+                                                .flatMap(savedAccount -> {
+                                                    destinationAccount.setBalance(destinationAccount.getBalance() + transactionDTO.getAmount());
+                                                    return accountRepository.save(destinationAccount)
+                                                            .thenReturn(savedTransaction);
+                                                })
                                                 .thenReturn(savedTransaction);
                                     });
                                 //.thenReturn(sourceTransaction);

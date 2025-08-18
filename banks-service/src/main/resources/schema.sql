@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS bancos
+(
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    location VARCHAR(200) NOT NULL
+);
