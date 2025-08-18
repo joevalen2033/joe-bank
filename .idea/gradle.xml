@@ -12,8 +12,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/accounts-service" />
             <option value="$PROJECT_DIR$/api-gateway" />
+            <option value="$PROJECT_DIR$/auth-service" />
             <option value="$PROJECT_DIR$/banks-service" />
             <option value="$PROJECT_DIR$/transactions-service" />
+            <option value="$PROJECT_DIR$/transfers-service" />
           </set>
         </option>
       </GradleProjectSettings>

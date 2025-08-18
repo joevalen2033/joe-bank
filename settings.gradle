@@ -4,4 +4,5 @@ include 'banks-service'
 include 'accounts-service'
 include 'transactions-service'
 include 'transfers-service'
+include 'auth-service'
 
